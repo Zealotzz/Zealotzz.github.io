@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev A2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="images/travel-logo.png">
+</head>
+
+<body>
+    <!--title header-->
+    <div class="heading">
+        <!--logo-->
+        <img src="images/travel-logo.png" alt="travel-logo" id="logo">
+        <h1>Traveler's Diary</h1>
+    </div>
+    <!--map, contains dropbox for avaliable country info-->
+    <div class="worldMap">
+        <div class="navi">
+            <h2>World Map</h2>
+            <img src="images/cog-icon.png" alt="cog-icon" class="icon openNav">
+        </div>
+        <nav>
+            <p>
+                <label for="country">Country: </label>
+                <select id="country" name="country">
+                    <option value="SG">Singapore</option>
+                    <option value="Y">Yes</option>
+                </select>
+            </p>
+        </nav>
+        <br>
+        <div>
+            <img src="images/world-map.jpg" alt="world-map" id="worldMap">
+            <div class="locations">
+                
+            </div>
+            <img src="images/plane.png" alt="plane-icon" class="locationPin" id="plane">
+        </div>
+    </div>
+    <div class="main">
+        <div>
+            <div class="navi">
+                <!--country name-->
+                <h2></h2>
+                <img src="images/drop-arrow.png" alt="arrow-icon" class="icon">
+            </div>
+            <nav>
+                <ul>
+                    <li>Food</li>
+                    <li>Landmarks</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="sub" id="sub1">
+                <h4></h4>
+                <p></p>
+            </div>
+            <div class="sub" id="sub2">
+                <h4></h4>
+                <p></p>
+            </div>
+            <div class="sub" id="sub3">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
