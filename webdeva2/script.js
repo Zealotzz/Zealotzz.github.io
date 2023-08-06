@@ -25,7 +25,6 @@ const handleOnMove = e => {
     nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
   track.dataset.percentage = nextPercentage;
-  content.dataset.country = countries[-(nextPercentage - nextPercentage % 20) / 20];
   changeBackground();
 
   track.animate({
@@ -114,10 +113,11 @@ const togglePageAnim = (e) => {
   else {
     track.style.display = content.dataset.isOpen == "true" ? "flex" : "block";
     track.animate({
-      transform: `translate(${content.dataset.isOpen == "true" ? 0 : -50}%, ${content.dataset.isOpen == "true" ? -20 : 0}%)
+      transform: `translate(${content.dataset.isOpen == "true" ? 0 : -50}%, ${content.dataset.isOpen == "true" ? -20 : track.dataset.percentage}%)
       scale(${parseFloat(track.dataset.scale)})`
     }, { duration: 800, fill: "forwards" });
   }
+  changeBackground();
 }
 
 const openSection = () => {
@@ -131,6 +131,7 @@ const closeSection = () => {
 }
 
 const changeBackground = () => {
+  content.dataset.country = countries[-(track.dataset.percentage - track.dataset.percentage % 20) / 20];
   let backgroundImg = document.querySelector("body");
   let currHoverPortrait = track.querySelector(`#${content.dataset.country} img`);
   backgroundImg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${currHoverPortrait.src}")`;
