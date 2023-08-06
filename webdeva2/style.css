@@ -145,19 +145,19 @@ nav>ul>li:hover {
     text-align: center;
 }
 
-.polaroid-img .left {
+.left {
     left: 10%;
     top: 20%;
     transform: rotate(40deg);
 }
 
-.polaroid-img .middle {
+.middle {
     left: 40%;
     top: 40%;
     transform: rotate(-20deg);
 }
 
-.polaroid-img .right {
+.right {
     left: 70%;
     top: 10%;
     transform: rotate(-40deg);
@@ -166,9 +166,9 @@ nav>ul>li:hover {
 
 @media screen and (max-width: 800px) {
 
-    .polaroid-img .left,
-    .polaroid-img .right,
-    .polaroid-img .middle {
+    .left,
+    .right,
+    .middle {
         display: block;
         position: relative;
         left: unset;
