@@ -23,6 +23,7 @@ const handleOnMove = e => {
     nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
   track.dataset.percentage = nextPercentage;
+  content.dataset.country = countries[-(track.dataset.percentage - track.dataset.percentage % 20) / 20];
   changeBackground();
 
   track.animate({
@@ -129,7 +130,6 @@ const closeSection = () => {
 }
 
 const changeBackground = () => {
-  content.dataset.country = countries[-(track.dataset.percentage - track.dataset.percentage % 20) / 20];
   let backgroundImg = document.querySelector("body");
   let currHoverPortrait = track.querySelector(`#${content.dataset.country} img`);
   backgroundImg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${currHoverPortrait.src}")`;
