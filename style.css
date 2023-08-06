@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/countries/SG/sg-skyline.png");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+footer > img{
+    position: absolute;
+    left: 5%;
+    top: 85%;
+    width: 5%;
+    min-width: 50px;
+}
+
+/*portrait track*/
+#page-track {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform-origin: top;
+    transform: translate(-50%, 0%);
+    user-select: none;
+    z-index: 10;
+}
+
+#page-track>.country {
+    display: flex;
+    margin-bottom: 4vmin;
+}
+
+#page-track>.country>.title {
+    background-color: antiquewhite;
+    writing-mode: vertical-lr;
+}
+
+#page-track>.country>.portrait {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+}
+
+/*main content*/
+#content {
+    display: none;
+    height: 100%;
+    color: white;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.back-button{
+    display: none;
+    position: absolute;
+    left: 5%;
+    top: 3%;
+    width: 5vmax;
+}
+
+nav>ul {
+    margin: 20px 0px;
+    justify-content: center;
+    display: flex;
+    gap: 3%;
+}
+
+nav>ul>li {
+    width: 15vmin;
+    padding: 2vmin;
+    text-align: center;
+    opacity: 0.3;
+    font-size: 100%;
+    overflow: hidden;
+}
+
+nav>ul>li:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.navSelected {
+    opacity: 1;
+    border-bottom: thick solid silver;
+}
+
+#content>div {
+    display: none;
+    padding: 1% 2%;
+}
+
+.sub-section {
+    display: flex;
+    width: 200vw;
+    height: 80vh;
+}
+
+.sub-section>div {
+    width: 100%;
+}
+
+#food,
+#landmarks {
+    position: relative;
+}
+
+/*polaroid imgs*/
+.polaroid-img {
+    width: 25vmin;
+    height: 35vmin;
+    background-color: white;
+    padding: 3% 3%;
+    position: absolute;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.polaroid-img>div{
+    overflow: hidden;
+}
+.polaroid-img>div>img {
+    background-color: black;
+    width: 25vmax;
+    height: 25vmin;
+    align-self: center;
+}
+
+.polaroid-img>div>img::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.polaroid-img>p {
+    color: black;
+    font-size: 200%;
+    text-align: center;
+}
+
+#left.polaroid-img {
+    left: 10%;
+    top: 20%;
+    transform: rotate(40deg);
+}
+
+#middle.polaroid-img {
+    left: 40%;
+    top: 40%;
+    transform: rotate(-20deg);
+}
+
+#right.polaroid-img {
+    left: 70%;
+    top: 10%;
+    transform: rotate(-40deg);
+}
+
+
+@media screen and (max-width: 800px) {
+
+    #left.polaroid-img,
+    #right.polaroid-img,
+    #middle.polaroid-img {
+        display: block;
+        position: relative;
+        left: unset;
+        top: unset;
+        margin:auto;
+        transform: rotate(0deg);
+    }
+
+    .back-button{
+        display: block;
+    }
+
+    nav>ul>li {
+        font-size: 60%;
+    }
+
+    .sub-section{
+        overflow-y: scroll;
+    }
+
+    .polaroid-img{
+        width: 70vmin;
+        height: 80vmin;
+    }
+
+    .polaroid-img>div>img {
+        width: 70vmin;
+        height: 70vmin;
+    }
+    .polaroid-img>p {
+        font-size: 100%;
+    }
+}
