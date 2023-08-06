@@ -108,8 +108,8 @@ nav>ul>li:hover {
     width: 100%;
 }
 
-#food,
-#landmarks {
+.food,
+.landmarks {
     position: relative;
 }
 
@@ -145,19 +145,19 @@ nav>ul>li:hover {
     text-align: center;
 }
 
-#left.polaroid-img {
+.polaroid-img .left {
     left: 10%;
     top: 20%;
     transform: rotate(40deg);
 }
 
-#middle.polaroid-img {
+.polaroid-img .middle {
     left: 40%;
     top: 40%;
     transform: rotate(-20deg);
 }
 
-#right.polaroid-img {
+.polaroid-img .right {
     left: 70%;
     top: 10%;
     transform: rotate(-40deg);
@@ -166,9 +166,9 @@ nav>ul>li:hover {
 
 @media screen and (max-width: 800px) {
 
-    #left.polaroid-img,
-    #right.polaroid-img,
-    #middle.polaroid-img {
+    .polaroid-img .left,
+    .polaroid-img .right,
+    .polaroid-img .middle {
         display: block;
         position: relative;
         left: unset;

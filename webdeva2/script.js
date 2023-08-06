@@ -1,6 +1,4 @@
-const countries = [
-  "SG", "JP", "DE", "IT"
-];
+const countries = ["SG", "JP", "DE", "IT"];
 
 const track = document.querySelector("#page-track");
 const content = document.querySelector("#content");
@@ -113,7 +111,7 @@ const togglePageAnim = (e) => {
   else {
     track.style.display = content.dataset.isOpen == "true" ? "flex" : "block";
     track.animate({
-      transform: `translate(${content.dataset.isOpen == "true" ? 0 : -50}%, ${content.dataset.isOpen == "true" ? -20 : track.dataset.percentage}%)
+      transform: `translate(${content.dataset.isOpen == "true" ? 0 : -50}%, ${content.dataset.isOpen == "true" ? -20 : parseFloat(track.dataset.percentage)}%)
       scale(${parseFloat(track.dataset.scale)})`
     }, { duration: 800, fill: "forwards" });
   }
